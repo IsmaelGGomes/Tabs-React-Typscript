@@ -43,7 +43,6 @@ export default function HomePage() {
                 {unique.map((unique, i) => (
                   <div
                     key={i}
-                    id='diSelect'
                     onClick={() => selectId(unique)}
                     className={`${unique == verifySelectd ? 'bg-gray-400' : 'bg-gray-300'} flex gap-2 px-2 py-2 w-48 h-12 justify-start text-[20px] text-center text-white font-semibold cursor-pointer rounded-t-xl`}>
                     <span>
@@ -55,10 +54,10 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <div className="flex rounded-tl-xl flex flex-row gap-4 w-5/6 h-20 bg-gray-400 py-4 px-0">
-                <div className="pt-2 relative text-gray-600">
+              <div className="flex rounded-tl-xl flex justify-between gap-4 w-5/6 h-20 bg-gray-400 py-4 px-0">
+                <div className="ml-4 pt-2 relative text-gray-600">
                   <input type="text" className='border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-full text-sm focus:outline-none'
-                    name="search" placeholder="Search"
+                    placeholder="Pesquisa"
                   />
                   <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
                     <svg className="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -70,15 +69,15 @@ export default function HomePage() {
                     </svg>
                   </button>
                 </div>
-                <div className="flex flex-row justify-end">
+                <div className="flex pt-2">
                   <div className="rounded-l-xl bg-blue-400 px-1 py-1 w-12 h-9">
                     <svg className='w-6 h-6 ml-2' aria-hidden="true" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"></path>
                     </svg>
                   </div>
-                  <div className="w-24 h-9 bg-gray-200">
-                    <span>Novo</span>
-                  </div>
+                  <button className="bg-gray-300 active:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-400 w-24 flex flex-col h-9  justify-center">
+                    Novo
+                  </button>
                 </div>
               </div>
               <div className="w-full lg:w-5/6">
