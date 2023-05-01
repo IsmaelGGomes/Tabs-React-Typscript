@@ -5,7 +5,7 @@ export type userRegister = {
     nome: string,
     cpf: number,
     senha: number,
-    setModaledit?: React.Dispatch<SetStateAction<boolean>>
+    setModaledit: React.Dispatch<SetStateAction<boolean>>,
 }
 
 export type user = {

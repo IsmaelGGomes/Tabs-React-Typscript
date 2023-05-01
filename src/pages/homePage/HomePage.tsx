@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { index } from '../../data/index';
 import { Table } from '../../components/table/index';
 import { user } from '../../types/user';
+import { ModalCreate } from '../../components/modal/modalCreate/modalCreate';
 
 export default function HomePage() {
 
@@ -26,6 +27,7 @@ export default function HomePage() {
     .map((data) => data.nome)
     .filter((value, index, self) => self.indexOf(value) === index);
 
+  const [modalCreate,setModalCreate] = useState(false)
   return (
     <>
       <div className="flex min-h-screen flex-row bg-gray-100 text-gray-800">
@@ -75,9 +77,16 @@ export default function HomePage() {
                       <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"></path>
                     </svg>
                   </div>
-                  <button className="bg-gray-300 active:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-400 w-24 flex flex-col h-9  justify-center">
+                  <button
+                  onClick={() => setModalCreate(!modalCreate)} 
+                  className="bg-gray-300 active:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-400 w-24 flex flex-col h-9  justify-center">
                     Novo
                   </button>
+                  {modalCreate && 
+                    <ModalCreate
+                    setModalCreate={setModalCreate}
+                    />
+                  }
                 </div>
               </div>
               <div className="w-full lg:w-5/6">

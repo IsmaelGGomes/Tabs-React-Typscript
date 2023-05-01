@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { user, userRegister } from '../../types/user';
-import { Modal } from '../modal/index';
+import { ModalEdit } from '../../components/modal/modalEdit/modalEdit';
 type Props = {
     data: user;
 }
@@ -49,7 +49,7 @@ export const Table = ({
                             </svg>
                         </div>
                         {modalEdit && 
-                        <Modal 
+                        <ModalEdit 
                           setModaledit={setModaledit}
                           cpf={cpf}
                           id={id}
