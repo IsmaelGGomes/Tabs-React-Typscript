@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { user, userRegister } from '../../types/user';
+import { userRegister } from '../../types/user';
 import { ModalEdit } from '../../components/modal/modalEdit/modalEdit';
-type Props = {
-    data: user;
-}
+
 export const Table = ({
     cpf,
     id,

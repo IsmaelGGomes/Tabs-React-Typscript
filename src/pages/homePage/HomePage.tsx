@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { index } from '../../data/index';
 import { Table } from '../../components/table/index';
-import { user } from '../../types/user';
 import { ModalCreate } from '../../components/modal/modalCreate/modalCreate';
 
 export default function HomePage() {
